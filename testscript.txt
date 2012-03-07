@@ -1,0 +1,9 @@
+[sender]
+send hi
+wait 10.0
+send hello
+wait 5.0
+send world
+wait 5.0
+[recver]
+wait 25.0

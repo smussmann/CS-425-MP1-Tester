@@ -1,0 +1,28 @@
+Takes as input a file defining the execution of a number of chat processes,
+runs those processes, and saves the output in a file, separated into the output
+for each process.
+
+The output file by default is test.out.txt.  You can specify a different name
+on the command line with --outfile or -o.
+
+Input file format:
+First takes any number of global directives. No global directives are defined yet.
+
+Then it expects a section starting with [name] on a line, followed by
+execution directives.  For each of these sections, one './chat' process is
+launched and given the input defined by the execution directives.  Note that
+name should be unique. After all execution directives are finished, the process
+will be killed.  The checker will run until all processes have reached this
+state.
+
+Execution directives are:
+wait num_seconds(float)
+send message
+crash
+
+For example, for the 0th process:
+[0]
+wait 1.0
+send "hi"
+wait 8.0
+crash
